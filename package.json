@@ -1,0 +1,29 @@
+{
+	"name": "drratner",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Ben Ratner",
+	"license": "UNLICENSED",
+	"scripts": {
+		"build": "npm run build-css && npm run build-js",
+		"build-css": "node-sass --include-path scss wp-content/themes/drratner/src/styles/main.scss wp-content/themes/drratner/dist/main.css",
+		"watch-css": "node-sass --watch --include-path scss wp-content/themes/drratner/src/styles/main.scss wp-content/themes/drratner/dist/main.css",
+		"build-js": "uglifyjs --compress --mangle -- wp-content/themes/drratner/src/scripts/*.js > wp-content/themes/drratner/dist/main.min.js",
+		"create-dist": "mkdirp wp-content/themes/drratner/dist/",
+		"get-bootstrap": "cp node_modules/bootstrap/dist/js/bootstrap.min.js wp-content/themes/drratner/dist",
+		"get-jquery": "cp node_modules/jquery/dist/jquery.min.js wp-content/themes/drratner/dist",
+		"get-fonts": "cp wp-content/themes/drratner/src/fonts/* wp-content/themes/drratner/fonts",
+		"postinstall": "npm run create-dist && npm run get-fonts && npm run get-bootstrap && npm run get-jquery",
+		"test": "echo 'No tests yet'"
+	},
+	"devDependencies": {
+		"bluebird": "^3.4.7",
+		"bootstrap": "^4.0.0",
+		"jquery": "^3.3.1",
+		"jshint": "^2.9.2",
+		"mkdirp": "^0.5.1",
+		"modernizr": "^3.3.1",
+		"node-sass": "^3.4.2",
+		"uglify-js": "^2.6.2"
+	}
+}

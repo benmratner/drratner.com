@@ -1,0 +1,56 @@
+{
+	"name": "SITE_PACKAGE",
+	"repositories" : [
+		{
+			"type" : "package",
+			"package" : {
+				"name" : "wordpress",
+				"type" : "webroot",
+				"version" : "4.9.5",
+				"dist" : {
+					"type" : "zip",
+					"url" : "https://github.com/WordPress/WordPress/archive/4.9.5.zip"
+				},
+				"require" : {
+					"fancyguy/webroot-installer" : "1.1.0"
+				}
+			}
+		},
+		{ 
+			"type": "package", 
+			"package": {  
+				"name": "advanced-custom-fields/advanced-custom-fields-pro",
+				"version": "5.6.10", 
+				"type": "wordpress-plugin",
+				"dist": { 
+					"type": "zip", 
+					"url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+				},
+				"require": {
+					"philippbaschke/acf-pro-installer": "^1.0", 
+					"composer/installers": "^1.0"
+				} 
+			} 
+		},
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"comment": "Find names of the plugins on wpackagist.org. Any that are in the wordpress plugin directory should be there. If not, see https://roots.io/wordpress-plugins-with-composer/",
+	"require" : {
+		"wordpress" : "4.9.5",
+		"fancyguy/webroot-installer" : "1.1.0",
+		"wpackagist-plugin/akismet" : "4.0.1",
+		"wpackagist-plugin/wordpress-importer" : "0.6.3",
+		"advanced-custom-fields/advanced-custom-fields-pro": "5.6.10",
+		"wpackagist-plugin/wordpress-seo": "5.8.0",
+		"wpackagist-plugin/ninja-forms": "3.2.4"
+	},
+	"extra" : {
+		"webroot-dir" : "wp",
+		"webroot-package" : "wordpress"
+	},
+	"scripts" : {
+	}
+}

@@ -1,0 +1,17 @@
+.idea
+.vagrant/
+wp/
+vendor/
+wp-content/uploads
+wp-content/plugins
+wp-content/plugins-old
+log/
+node_modules/
+vagrant.log
+wp-content/themes/**/dist
+
+.DS_Store
+wp-config.php
+npm-debug.log
+yarn-error.log
+php-errors.log
